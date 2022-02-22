@@ -4,10 +4,18 @@ data = pandas.read_csv("nato_phonetic_alphabet.csv")
 
 nato_dict = {row.letter: row.code for (index, row) in data.iterrows() }
 
-user_input = input('Enter word: ').upper()
+def generate_phonetic():
 
-char_list = [char for char in user_input]
+  user_input = input('Enter word: ').upper()
 
-code_list = [nato_dict[char] for char in char_list]
+  char_list = [char for char in user_input]
 
-print(code_list)
+  try:
+    code_list = [nato_dict[char] for char in char_list]
+  except KeyError:
+    print("Only Alphabets allowed")
+    generate_phonetic()
+  else: 
+    print(code_list)
+
+generate_phonetic()
