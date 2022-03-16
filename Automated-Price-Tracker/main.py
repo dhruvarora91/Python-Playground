@@ -24,6 +24,7 @@ def send_email():
         )
 
 
+# Get your headers from: http://myhttpheader.com/
 headers = {
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36",
     "Accept-Language": "en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7",
