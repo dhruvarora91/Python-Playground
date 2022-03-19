@@ -11,10 +11,10 @@ def get_random_person():
 def check_answer(a_followers, b_followers):
 
     if a_followers > b_followers:
-        return 'a'
+        return "a"
 
     elif a_followers < b_followers:
-        return 'b'
+        return "b"
 
 
 def format_string(person):
@@ -36,20 +36,24 @@ def play_game():
 
         print(f"Compare A: {format_string(first_person)}")
         print(f"Against B: {format_string(second_person)}")
-        print(first_person['follower_count'], second_person['follower_count'])  # remove this line
+        print(
+            first_person["follower_count"], second_person["follower_count"]
+        )  # remove this line
 
         user_choice = input("Who has more followers? Type 'A' or 'B': ").lower()
-        correct_answer = check_answer(first_person['follower_count'], second_person['follower_count'])
+        correct_answer = check_answer(
+            first_person["follower_count"], second_person["follower_count"]
+        )
 
         if correct_answer == user_choice:
             continue_game = True
             score += 1
-            print("\033[H\033[2J") # clear the screen
-            print(f'Correct!! Your Current Score is: {score}')
+            print("\033[H\033[2J")  # clear the screen
+            print(f"Correct!! Your Current Score is: {score}")
 
         else:
             continue_game = False
-            print(f'Wrong! Game Over. Your Final Score is: {score}')
+            print(f"Wrong! Game Over. Your Final Score is: {score}")
 
         first_person = second_person
         second_person = get_random_person()
